@@ -15,8 +15,7 @@
 #define ARROW  4
 #define NUMPAD 5
 #define FKEY   6
-#define MOUSE  7
-#define ADJ    8
+#define ADJ    7
 
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
@@ -42,7 +41,7 @@
   &none   &kp TAB           &kp Q         &kp W          &kp E              &kp R                  &kp T         &kp Y         &kp U                 &kp I              &kp O            &kp P            &kp BSPC        &none
           &lt ARROW ESC     &lt FKEY A    &lt SYM1 S     &lt NUMPAD D       &lt SYM2 F             &kp G         &kp H         &kp J                 &kp K              &kp L            &lt SYM3 SEMI    &kp SQT
           &kp LSHIFT        &hm LCTRL Z   &hm LSHIFT X   &hm LALT C         &hm LGUI V             &kp B         &kp N         &hm LGUI M            &hm LALT COMMA     &hm LSHIFT DOT   &hm LCTRL FSLH   &hm LSHIFT BSLH
-                                          &none          &kp SPACE          &mt LSHIFT TAB                       &kp BSPC      &kp RET       &kp DEL     
+                                          &lt ADJ none          &kp SPACE          &mt LSHIFT TAB                       &kp BSPC      &kp RET       &kp DEL     
                         >;
                 };
                 symbol_layer_1 {
