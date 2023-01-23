@@ -42,7 +42,7 @@
   &none   &kp TAB           &kp Q         &kp W          &kp E              &kp R                  &kp T         &kp Y         &kp U                 &kp I              &kp O            &kp P            &kp BSPC        &none
           &lt ARROW ESC     &lt FKEY A    &lt SYM1 S     &lt NUMPAD D       &lt SYM2 F             &kp G         &kp H         &kp J                 &kp K              &kp L            &lt SYM3 SEMI    &kp SQT
           &kp LSHIFT        &hm LCTRL Z   &hm LSHIFT X   &hm LALT C         &hm LGUI V             &kp B         &kp N         &hm LGUI M            &hm LALT COMMA     &hm LSHIFT DOT   &hm LCTRL FSLH   &hm LSHIFT BSLH
-                                          &kp SPACE      &mt LSHIFT TAB     &none                  &kp DEL       &kp BSPC      &kp RET
+                                          &mt LSHIFT TAB &kp SPACE          &none                  &kp BSPC      &kp RET       &kp DEL     
                         >;
                 };
                 symbol_layer_1 {
