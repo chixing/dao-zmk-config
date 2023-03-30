@@ -1,4 +1,7 @@
-// instructions: edit this file, push to github, download the built files from github actions, and copy them to your keyboard's firmware folder
+// compile and flash instructions:
+// 1. edit this file, push to github,
+// 2. download the built files from github actions
+// 3. copy them to your keyboard's firmware folder
 
 /*
  * Copyright (c) 2021 Rafael Yumagulov
