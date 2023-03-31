@@ -1,7 +1,8 @@
 // compile and flash instructions:
 // 1. edit this file, push to github,
 // 2. download the built files from github actions
-// 3. copy them to your keyboard's firmware folder
+// 3. put keyboard into flash mode by double clicking the reset button
+// 4. copy them to your keyboard's firmware folder
 
 /*
  * Copyright (c) 2021 Rafael Yumagulov
