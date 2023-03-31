@@ -3,6 +3,7 @@
 // 2. download the built files from github actions
 // 3. put keyboard into flash mode by double clicking the reset button
 // 4. copy them to your keyboard's firmware folder
+// note: you have to flash the left one even if you only want to change the right one
 
 /*
  * Copyright (c) 2021 Rafael Yumagulov
