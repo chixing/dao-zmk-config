@@ -28,6 +28,13 @@
 &mt { quick_tap_ms = <200>; };
 
 / {
+    chosen {
+        // zmk,matrix_transform = &default_transform;
+        zmk,matrix_transform = &extra_keys_transform;
+    };
+};
+
+/ {
         behaviors {
                 hm: homerow_mods {
                         compatible = "zmk,behavior-hold-tap";
