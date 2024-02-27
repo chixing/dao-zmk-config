@@ -76,9 +76,9 @@
                 };
                 symbol_layer_3 {
                         bindings = <
-  &none   &none        &none          &none          &none          &none          &none          &none          &LA(7)         &LA(8)         &LA(9)          &none          &none   &none
-          &none        &kp EXCL       &kp AT         &kp HASH       &kp DLLR       &none          &none          &LA(4)         &LA(5)         &LA(6)          &LA(LBKT)      &none
-          &none        &kp PRCNT      &kp CARET      &kp AMPS       &kp STAR       &none          &none          &LA(1)         &LA(2)         &LA(3)          &LA(RBKT)      &none
+  &none   &none        &none          &none          &none          &none          &none          &none          &kp LA(7)      &kp LA(8)      &kp LA(9)      &none          &none   &none
+          &none        &kp EXCL       &kp AT         &kp HASH       &kp DLLR       &none          &none          &kp LA(4)      &kp LA(5)      &kp LA(6)      &kp LA(LBKT)   &none
+          &none        &kp PRCNT      &kp CARET      &kp AMPS       &kp STAR       &none          &none          &kp LA(1)      &kp LA(2)      &kp LA(3)      &kp LA(RBKT)   &none
                                                      &trans         &trans         &trans         &trans         &trans         &trans
                         >;
                 };
