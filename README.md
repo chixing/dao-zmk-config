@@ -1,9 +1,7 @@
 # ZMK Firmware for Dao keyboard
 
-This is a repository for a ZMK Firmware for both Dao42 and Dao44 keyboards.
-
-* [main](https://github.com/yumagulovrn/dao-zmk-config/tree/main) branch is for Dao42
-* [dao44](https://github.com/yumagulovrn/dao-zmk-config/tree/dao44) branch is, obviously, for Dao44
+This fork's `dao42` branch is the source of truth for chixing's Dao42 firmware.
+The original upstream also contains Dao44 support.
 
 ## Default keymap
 
@@ -12,6 +10,9 @@ This is a repository for a ZMK Firmware for both Dao42 and Dao44 keyboards.
 Visual representation of the default keymap in keyboard-layout-editor: [KLE](http://www.keyboard-layout-editor.com/#/gists/67a81f6b83c65abcda5e7f32989a1688)
 
 This layout is heavily inspired by [this](https://github.com/aroum/Watchman-layouts)
+
+The current base layer uses plain `A`; holding `B` opens the F-key layer. There
+are nine functional layers.
 
 ### Dao44
 
@@ -25,6 +26,7 @@ Because of current ZMK limitations, Dao44 keymap is in the branch [dao44](https:
 
 - [FAQ](#faq)
   - [How to change the keymap?](#how-to-change-the-keymap)
+  - [How to build locally?](#how-to-build-locally)
   - [How to flash the keyboard?](#how-to-flash-the-keyboard)
   - [How to pair halves?](#how-to-pair-halves)
   - [Problems](#problems)
@@ -32,23 +34,34 @@ Because of current ZMK limitations, Dao44 keymap is in the branch [dao44](https:
 
 ### How to change the keymap?
 
-1. Fork the repository https://github.com/yumagulovrn/dao-zmk-config
-2. Make changes to the [dao.keymap](../config/boards/arm/dao/dao.keymap) file in your repository OR use wonderful https://nickcoutsos.github.io/keymap-editor/
-3. Commit changes to your repository
-4. Go to `Actions` tab in your repository
-5. Wait for the GitHub Action to complete
-6. Grab `firmware.zip` file - it contains firmware for both of your halves
+1. Edit [`config/dao.keymap`](config/dao.keymap), or use the [ZMK Keymap Editor](https://nickcoutsos.github.io/keymap-editor/).
+2. Commit the change.
+3. Build locally as below, or push and download `firmware.zip` from GitHub Actions.
+
+### How to build locally?
+
+`config/west.yml` pins ZMK `v0.3`, the compatible release for the Ergonaut
+DAO board module's legacy Zephyr hardware definition. In an initialized ZMK
+toolchain/container workspace with this repo's `config` mounted at
+`/workspace/config`:
+
+```sh
+west update
+west zephyr-export
+west build -p always -s zmk/app -d build/dao_left -b dao_left -- -DZMK_CONFIG=/workspace/config
+west build -p always -s zmk/app -d build/dao_right -b dao_right -- -DZMK_CONFIG=/workspace/config
+```
+
+The outputs are `build/dao_left/zephyr/zmk.uf2` and
+`build/dao_right/zephyr/zmk.uf2`.
 
 ### How to flash the keyboard?
 
-1. Obtain `firmware.zip`
-2. Unzip `firmware.zip` - you should have `dao_left.uf2` and `dao_right.uf2` files
-3. Turn off the power for selected halve (move slider to position `OFF`)
-4. Connect selected halve to the PC via USB-C cable
-5. Press `RESET` button **twice** to enter DFU mode - you should see new USB device in your file manager
-6. Copy the corresponding firmware to the root directory of the new USB device
-7. Disconnect selected halve from the PC
-8. Repeat steps 3-7 for the other halve
+1. Obtain `dao_left.uf2` and `dao_right.uf2`.
+2. Flash one half at a time: switch it `OFF`, connect USB-C, then quickly press `RESET` twice.
+3. When `NRF52BOOT` mounts, copy the matching UF2 to its root.
+4. Wait for the drive to disconnect, then unplug that half.
+5. Repeat for the other half. The left half owns the keymap, but keep both halves on the same build.
 
 ### How to pair halves?
 

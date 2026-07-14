@@ -1,9 +1,6 @@
-// compile and flash instructions:
-// 1. edit this file, push to github,
-// 2. download the built files from github actions
-// 3. put keyboard into flash mode by double clicking the reset button
-// 4. copy them to your keyboard's firmware folder
-// note: you have to flash the left one even if you only want to change the right one
+// Build locally (README.md) or push for GitHub Actions.
+// Flash one half at a time: power off, connect USB, double-tap RESET, copy its UF2.
+// Flash both halves; the left half owns the keymap.
 
 /*
  * Copyright (c) 2021 Rafael Yumagulov
